@@ -248,6 +248,7 @@ public class PreAuthServlet extends ZimbraServlet {
                     else
                         at = (expires ==  0) ? AuthProvider.getAuthToken(acct) : AuthProvider.getAuthToken(acct, expires);
 
+                    at.setCsrfTokenEnabled(true);
                     setCookieAndRedirect(req, resp, at);
 
                 } else {
