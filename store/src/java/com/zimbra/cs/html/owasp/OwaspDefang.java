@@ -58,6 +58,8 @@ public class OwaspDefang extends AbstractDefang {
         String sanitizedHtml = runSanitizer(html, neuterImages);
         if (sanitizedHtml != null) {
             out.write(sanitizedHtml);
+        } else {
+            out.write(html);
         }
         out.close();
     }
